@@ -68,8 +68,8 @@ export class PostsController {
 
   @Delete("one/:id")
   @HttpCode(200)
-  removepost(@Param("id") id: string) {
-    let post = this.postsService.remove(id);
+  async removepost(@Param("id") id: string) {
+    let post = await this.postsService.remove(id);
 
     return post;
   }

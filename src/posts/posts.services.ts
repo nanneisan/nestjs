@@ -41,6 +41,6 @@ export class PostsServices {
 
   async remove(id: string): Promise<void> {
     const post = await this.postModel.findOne({ where: { id } });
-    await post.destroy();
+    return await post.destroy();
   }
 }

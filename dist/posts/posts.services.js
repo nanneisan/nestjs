@@ -47,7 +47,7 @@ let PostsServices = class PostsServices {
     }
     async remove(id) {
         const post = await this.postModel.findOne({ where: { id } });
-        await post.destroy();
+        return await post.destroy();
     }
 };
 PostsServices = __decorate([
